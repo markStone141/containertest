@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+</head>
+<body>
+    <h1>Notes</h1>
+
+    <a href="/create">新規作成</a>
+
+    <ul>
+        {% for note in notes %}
+            <li>
+                <h2>{{ note.title }}</h2>
+                <p>{{ note.body }}</p>
+
+                <a href="/edit/{{ note.id }}">編集</a>
+
+                <form action="/delete/{{ note.id }}" method="post" style="display:inline;">
+                    <button type="submit">削除</button>
+                </form>
+            </li>
+        {% else %}
+            <p>まだメモがありません。</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

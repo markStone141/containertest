@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Note</title>
+</head>
+<body>
+    <h1>編集</h1>
+
+    <form method="post">
+        <p>
+            <label>タイトル</label><br>
+            <input type="text" name="title" value="{{ note.title }}" required>
+        </p>
+
+        <p>
+            <label>本文</label><br>
+            <textarea name="body" required>{{ note.body }}</textarea>
+        </p>
+
+        <button type="submit">更新</button>
+    </form>
+
+    <a href="/">戻る</a>
+</body>
+</html>
